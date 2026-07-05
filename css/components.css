@@ -238,11 +238,21 @@
 
 .mobile-nav-sublist {
   padding-left: var(--spacing-md);
-  margin-top: var(--spacing-xs);
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
   border-left: 2px solid var(--color-primary-light);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height var(--transition-normal) ease-out, opacity var(--transition-normal) ease-out, margin-top var(--transition-normal) ease-out, padding-bottom var(--transition-normal) ease-out;
+}
+
+.mobile-nav-sublist.open {
+  margin-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  opacity: 1;
 }
 
 .mobile-dropdown-link {
@@ -253,6 +263,55 @@
 }
 
 .mobile-dropdown-link:hover {
+  color: var(--color-primary);
+}
+
+/* Mobile Drawer Close Button */
+.mobile-nav-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--color-secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  z-index: 1010;
+}
+
+.mobile-nav-close:hover {
+  color: var(--color-primary);
+  transform: scale(1.15);
+}
+
+/* Submenu Collapsible Toggle and Chevron styling */
+.mobile-nav-link.has-submenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mobile-nav-link.has-submenu .submenu-chevron {
+  width: 12px;
+  height: 8px;
+  transition: transform var(--transition-normal);
+  color: var(--color-text-muted);
+}
+
+.mobile-nav-link.has-submenu.active {
+  color: var(--color-primary);
+}
+
+.mobile-nav-link.has-submenu.active .submenu-chevron {
+  transform: rotate(180deg);
   color: var(--color-primary);
 }
 

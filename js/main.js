@@ -53,6 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNavOverlay.classList.remove('open');
     mobileNavDrawer.classList.remove('open');
     document.body.style.overflow = '';
+    // Collapse any open sublists when menu is closed
+    const openSublists = mobileNavDrawer?.querySelectorAll('.mobile-nav-sublist.open');
+    openSublists?.forEach(sublist => {
+      sublist.classList.remove('open');
+      sublist.style.maxHeight = null;
+      const toggle = sublist.previousElementSibling;
+      if (toggle && toggle.classList.contains('has-submenu')) {
+        toggle.classList.remove('active');
+      }
+    });
   }
 
   if (hamburgerBtn) {
@@ -69,6 +79,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileNavOverlay) {
     mobileNavOverlay.addEventListener('click', closeMobileNav);
+  }
+
+  // Setup Exit Button & Submenus dynamically for all pages
+  if (mobileNavDrawer) {
+    // Add close button if not exists
+    if (!mobileNavDrawer.querySelector('.mobile-nav-close')) {
+      const closeBtn = document.createElement('button');
+      closeBtn.className = 'mobile-nav-close';
+      closeBtn.setAttribute('aria-label', 'Close Menu');
+      closeBtn.innerHTML = '&times;';
+      closeBtn.addEventListener('click', closeMobileNav);
+      mobileNavDrawer.insertBefore(closeBtn, mobileNavDrawer.firstChild);
+    }
+
+    // Set up collapsible submenus
+    const submenuSpans = mobileNavDrawer.querySelectorAll('span.mobile-nav-link');
+    submenuSpans.forEach(span => {
+      const sublist = span.nextElementSibling;
+      if (sublist && sublist.classList.contains('mobile-nav-sublist')) {
+        span.classList.add('has-submenu');
+        span.style.marginBottom = ''; // remove inline bottom margin hack
+
+        // Add chevron if not exists
+        if (!span.querySelector('.submenu-chevron')) {
+          const chevronHTML = `<svg class="submenu-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+          span.insertAdjacentHTML('beforeend', chevronHTML);
+        }
+
+        // Toggle click event
+        span.addEventListener('click', (e) => {
+          e.preventDefault();
+          const isOpen = sublist.classList.contains('open');
+          
+          if (isOpen) {
+            span.classList.remove('active');
+            sublist.classList.remove('open');
+            sublist.style.maxHeight = null;
+          } else {
+            span.classList.add('active');
+            sublist.classList.add('open');
+            sublist.style.maxHeight = sublist.scrollHeight + 'px';
+          }
+        });
+      }
+    });
   }
 
   // Close drawer on ESC key
