@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our E-Waste Recycling Services | Bhushan E-Waste Recycling</title>
+  <meta name="description" content="Explore our CPCB-compliant e-waste recycling, IT Asset Disposition (ITAD), battery recycling, data destruction, and EPR authorization support services. Serving businesses across India.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <style>
+    .page-hero {
+      padding-top: 140px;
+      padding-bottom: 60px;
+      background: linear-gradient(180deg, var(--color-primary-light) 0%, rgba(250,250,249,1) 100%);
+      text-align: center;
+    }
+    
+    .services-grid-hub {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+    
+    @media (min-width: 768px) {
+      .services-grid-hub {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .services-grid-hub {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .service-hub-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: all var(--transition-normal);
+    }
+    
+    .service-hub-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(15, 92, 61, 0.15);
+    }
+    
+    .service-hub-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background-color: var(--color-primary-light);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .service-hub-title {
+      font-size: var(--font-size-xl);
+      color: var(--color-secondary);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .service-hub-desc {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-body);
+      line-height: var(--line-height-body);
+      margin-bottom: var(--spacing-lg);
+      flex-grow: 1;
+    }
+    
+    .service-feature-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .service-feature-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      background-color: var(--color-bg-canvas);
+      padding: 4px 8px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="../img/logo.png" alt="Bhushan E-Waste Recycling Logo">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About Us</a></div>
+        <div class="nav-item">
+          <a href="services.html" class="nav-link active">
+            Services
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="services/it-asset-disposition.html" class="dropdown-link">IT Asset Disposition (ITAD)</a>
+            <a href="services/e-waste-recycling.html" class="dropdown-link">E-Waste Recycling</a>
+            <a href="services/battery-recycling.html" class="dropdown-link">Battery Recycling</a>
+            <a href="services/epr-compliance.html" class="dropdown-link">EPR Compliance Authorization</a>
+            <a href="services/dismantling.html" class="dropdown-link">Dismantling & Segregation</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="infrastructure.html" class="nav-link">Our Infra</a></div>
+        <div class="nav-item"><a href="recycling-process.html" class="nav-link">Recycling Process</a></div>
+        <div class="nav-item">
+          <a href="resources.html" class="nav-link">
+            Resources
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="data-security.html" class="dropdown-link">Data Security</a>
+            <a href="epr-compliance.html" class="dropdown-link">Government Guidelines</a>
+            <a href="resources.html" class="dropdown-link">Knowledge Center & Blog</a>
+            <a href="careers.html" class="dropdown-link">Careers</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="pickup-booking.html" class="btn btn-primary" style="padding: 10px 20px;">Schedule Pickup</a>
+        <button class="hamburger-btn" aria-label="Toggle Mobile Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer">
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <span class="mobile-nav-link" style="margin-bottom: -10px;">Services</span>
+      <div class="mobile-nav-sublist">
+        <a href="services/it-asset-disposition.html" class="mobile-dropdown-link">IT Asset Disposition</a>
+        <a href="services/e-waste-recycling.html" class="mobile-dropdown-link">E-Waste Recycling</a>
+        <a href="services/battery-recycling.html" class="mobile-dropdown-link">Battery Recycling</a>
+        <a href="services/epr-compliance.html" class="mobile-dropdown-link">EPR Compliance</a>
+        <a href="services/dismantling.html" class="mobile-dropdown-link">Dismantling Unit</a>
+      </div>
+      <a href="infrastructure.html" class="mobile-nav-link">Our Infrastructure</a>
+      <a href="recycling-process.html" class="mobile-nav-link">Recycling Process</a>
+      <span class="mobile-nav-link" style="margin-bottom: -10px;">Security & Rules</span>
+      <div class="mobile-nav-sublist">
+        <a href="data-security.html" class="mobile-dropdown-link">Data Security</a>
+        <a href="epr-compliance.html" class="mobile-dropdown-link">EPR Guidelines</a>
+        <a href="resources.html" class="mobile-dropdown-link">Resources & Blog</a>
+        <a href="careers.html" class="mobile-dropdown-link">Careers</a>
+      </div>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+    </nav>
+    <a href="pickup-booking.html" class="btn btn-primary" style="margin-top: auto; width: 100%;">Schedule Pickup</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section-badge">Service Portfolio</span>
+      <h1 class="section-title" style="margin: 0 auto 12px;">E-Waste Solutions for Modern Businesses</h1>
+      <p class="section-desc" style="margin-left:auto; margin-right:auto;">CPCB certified electronic waste disposal, data wiping, battery recycling, and environmental auditing for Indian enterprises.</p>
+    </div>
+  </section>
+
+  <!-- Hub Grid -->
+  <section style="background-color:#ffffff;" class="reveal">
+    <div class="container">
+      <div class="services-grid-hub">
+        <!-- Card 1 -->
+        <div class="service-hub-card">
+          <div class="service-hub-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+          </div>
+          <h3 class="service-hub-title">IT Asset Disposition</h3>
+          <p class="service-hub-desc">Safe decommissioning, tracking, reporting, and sustainable recycling of outdated corporate servers, monitors, storage devices, and PC hardware.</p>
+          <div class="service-feature-tag-list">
+            <span class="service-feature-tag">ITAD</span>
+            <span class="service-feature-tag">Asset Tracking</span>
+            <span class="service-feature-tag">Eco Auditing</span>
+          </div>
+          <a href="services/it-asset-disposition.html" class="btn btn-primary" style="width: 100%;">View ITAD Details</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-hub-card">
+          <div class="service-hub-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </div>
+          <h3 class="service-hub-title">E-Waste Recycling</h3>
+          <p class="service-hub-desc">Scientific mechanical sorting and refining of appliances, office printers, circuit boards, and other electronic devices into secondary industrial materials.</p>
+          <div class="service-feature-tag-list">
+            <span class="service-feature-tag">CPCB Guidelines</span>
+            <span class="service-feature-tag">Metal Harvest</span>
+            <span class="service-feature-tag">Zero Landfill</span>
+          </div>
+          <a href="services/e-waste-recycling.html" class="btn btn-primary" style="width: 100%;">View Recycling Details</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-hub-card">
+          <div class="service-hub-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect><line x1="23" y1="11" x2="23" y2="13"></line><line x1="9" y1="6" x2="9" y2="18"></line></svg>
+          </div>
+          <h3 class="service-hub-title">Battery Recycling</h3>
+          <p class="service-hub-desc">Ecologically approved processing of UPS lead-acid battery blocks, laptop lithium cells, and industrial hybrid batteries to capture toxic heavy metals.</p>
+          <div class="service-feature-tag-list">
+            <span class="service-feature-tag">Toxic Waste</span>
+            <span class="service-feature-tag">Lithium Wiping</span>
+            <span class="service-feature-tag">Lead Reclaim</span>
+          </div>
+          <a href="services/battery-recycling.html" class="btn btn-primary" style="width: 100%;">View Battery Details</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-hub-card">
+          <div class="service-hub-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          </div>
+          <h3 class="service-hub-title">EPR Compliance</h3>
+          <p class="service-hub-desc">Full coordination, portal registrations, documentation, and target fulfillment services under official Extended Producer Responsibility legislation.</p>
+          <div class="service-feature-tag-list">
+            <span class="service-feature-tag">EPR Portal</span>
+            <span class="service-feature-tag">Form 2 & Form 6</span>
+            <span class="service-feature-tag">Target Audit</span>
+          </div>
+          <a href="services/epr-compliance.html" class="btn btn-primary" style="width: 100%;">View EPR Support</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="service-hub-card">
+          <div class="service-hub-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          </div>
+          <h3 class="service-hub-title">Dismantling & Sorting</h3>
+          <p class="service-hub-desc">Careful sorting and manual segregation of internal electronic parts, copper wires, silicon processors, and chassis covers at our Nashik plant.</p>
+          <div class="service-feature-tag-list">
+            <span class="service-feature-tag">Nashik Unit</span>
+            <span class="service-feature-tag">Manual Sorting</span>
+            <span class="service-feature-tag">Raw Sorting</span>
+          </div>
+          <a href="services/dismantling.html" class="btn btn-primary" style="width: 100%;">View Dismantling Info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="reveal">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Corporate E-Waste Audits</h2>
+        <p>Looking for a complete commercial site audit of obsolete hardware assets? Connect with our technical evaluation team for scheduling details.</p>
+        <a href="contact.html" class="btn btn-secondary" style="background-color: var(--color-accent); color: var(--color-secondary-dark);">Contact Technical Audits</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom: var(--spacing-md);">
+            <img src="../img/logo.png" alt="Bhushan E-Waste Recycling Logo" class="footer-logo-img">
+          </a>
+          <p>Government-authorized and CPCB certified e-waste recycler delivering secure ITAD, battery recycling, data destruction, and EPR support in Nashik, Maharashtra.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services/it-asset-disposition.html" class="footer-link">IT Asset Disposition</a></li>
+            <li><a href="services/e-waste-recycling.html" class="footer-link">E-Waste Recycling</a></li>
+            <li><a href="services/battery-recycling.html" class="footer-link">Battery Recycling</a></li>
+            <li><a href="services/epr-compliance.html" class="footer-link">EPR Compliance</a></li>
+            <li><a href="services/dismantling.html" class="footer-link">Dismantling & Sorting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Our Company</a></li>
+            <li><a href="infrastructure.html" class="footer-link">Our Infrastructure</a></li>
+            <li><a href="recycling-process.html" class="footer-link">Recycling Flow</a></li>
+            <li><a href="data-security.html" class="footer-link">Data Security</a></li>
+            <li><a href="careers.html" class="footer-link">Careers</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Newsletter</h4>
+          <div class="footer-newsletter">
+            <p>Subscribe to receive CPCB guidelines and eco notification alerts directly in your inbox.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email Address">
+              <button type="submit" class="newsletter-submit">Go</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="copyright">&copy; 2026 Bhushan E-Waste Recycling Pvt. Ltd. All rights reserved.</span>
+        <div class="certifications-row">
+          <span class="cert-badge">CPCB Certified Recycler</span>
+          <span class="cert-badge">MPCB Authorized</span>
+          <span class="cert-badge">ISO 14001 Compliant</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919999999999?text=Hello%20Bhushan%20E-Waste%2C%20I%20want%20to%20schedule%20an%20e-waste%20pickup." class="sticky-whatsapp-btn" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/form-validation.js"></script>
+</body>
+</html>

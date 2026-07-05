@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule a Pickup | Bhushan E-Waste Recycling</title>
+  <meta name="description" content="Use our step-by-step wizard to calculate e-waste volumes, supply address details, specify schedule dates, and secure CPCB certified collection.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <style>
+    .page-hero {
+      padding-top: 140px;
+      padding-bottom: 40px;
+      background: linear-gradient(180deg, var(--color-primary-light) 0%, rgba(250,250,249,1) 100%);
+      text-align: center;
+    }
+    
+    .wizard-container {
+      max-width: 780px;
+      margin: 0 auto var(--spacing-xxl);
+    }
+    
+    .stepper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-xl);
+      position: relative;
+    }
+    
+    .stepper::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--color-border);
+      z-index: 1;
+    }
+    
+    .stepper-item {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 20%;
+    }
+    
+    .stepper-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--color-bg-card);
+      border: 2px solid var(--color-border);
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: var(--font-size-md);
+      transition: all var(--transition-normal);
+    }
+    
+    .stepper-label {
+      font-size: 11px;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-muted);
+      margin-top: 8px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .stepper-item.active .stepper-icon {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      background-color: var(--color-primary-light);
+    }
+    
+    .stepper-item.active .stepper-label {
+      color: var(--color-secondary);
+      font-weight: var(--font-weight-bold);
+    }
+    
+    .stepper-item.completed .stepper-icon {
+      border-color: var(--color-primary);
+      background-color: var(--color-primary);
+      color: #ffffff;
+    }
+    
+    .material-select-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    @media (min-width: 600px) {
+      .material-select-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .material-select-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      transition: all var(--transition-fast);
+    }
+    
+    .material-select-card:hover {
+      border-color: var(--color-primary);
+      background-color: var(--color-primary-light);
+    }
+    
+    .material-select-card.selected {
+      border-color: var(--color-primary);
+      background-color: var(--color-primary-light);
+      box-shadow: 0 0 0 2px var(--color-primary);
+    }
+    
+    .material-card-icon {
+      font-size: 24px;
+      color: var(--color-primary);
+    }
+    
+    .wizard-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: var(--spacing-xl);
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--spacing-lg);
+    }
+    
+    .form-error {
+      color: #dc2626;
+      font-size: var(--font-size-xs);
+      margin-top: 4px;
+      display: none;
+    }
+    
+    .form-group.is-invalid .form-input {
+      border-color: #dc2626;
+    }
+    
+    .review-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .review-table td {
+      padding: var(--spacing-sm) 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: var(--font-size-sm);
+    }
+    
+    .review-table td:first-child {
+      font-weight: var(--font-weight-bold);
+      color: var(--color-secondary);
+      width: 35%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Bhushan E-Waste Recycling Logo">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About Us</a></div>
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">
+            Services
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="services/it-asset-disposition.html" class="dropdown-link">IT Asset Disposition (ITAD)</a>
+            <a href="services/e-waste-recycling.html" class="dropdown-link">E-Waste Recycling</a>
+            <a href="services/battery-recycling.html" class="dropdown-link">Battery Recycling</a>
+            <a href="services/epr-compliance.html" class="dropdown-link">EPR Compliance Authorization</a>
+            <a href="services/dismantling.html" class="dropdown-link">Dismantling & Segregation</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="infrastructure.html" class="nav-link">Our Infra</a></div>
+        <div class="nav-item"><a href="recycling-process.html" class="nav-link">Recycling Process</a></div>
+        <div class="nav-item">
+          <a href="resources.html" class="nav-link">
+            Resources
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="data-security.html" class="dropdown-link">Data Security</a>
+            <a href="epr-compliance.html" class="dropdown-link">Government Guidelines</a>
+            <a href="resources.html" class="dropdown-link">Knowledge Center & Blog</a>
+            <a href="careers.html" class="dropdown-link">Careers</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="pickup-booking.html" class="btn btn-primary active" style="padding: 10px 20px;">Schedule Pickup</a>
+        <button class="hamburger-btn" aria-label="Toggle Mobile Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer">
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <span class="mobile-nav-link" style="margin-bottom: -10px;">Services</span>
+      <div class="mobile-nav-sublist">
+        <a href="services/it-asset-disposition.html" class="mobile-dropdown-link">IT Asset Disposition</a>
+        <a href="services/e-waste-recycling.html" class="mobile-dropdown-link">E-Waste Recycling</a>
+        <a href="services/battery-recycling.html" class="mobile-dropdown-link">Battery Recycling</a>
+        <a href="services/epr-compliance.html" class="mobile-dropdown-link">EPR Compliance</a>
+        <a href="services/dismantling.html" class="mobile-dropdown-link">Dismantling Unit</a>
+      </div>
+      <a href="infrastructure.html" class="mobile-nav-link">Our Infrastructure</a>
+      <a href="recycling-process.html" class="mobile-nav-link">Recycling Process</a>
+      <span class="mobile-nav-link" style="margin-bottom: -10px;">Security & Rules</span>
+      <div class="mobile-nav-sublist">
+        <a href="data-security.html" class="mobile-dropdown-link">Data Security</a>
+        <a href="epr-compliance.html" class="mobile-dropdown-link">EPR Guidelines</a>
+        <a href="resources.html" class="mobile-dropdown-link">Resources & Blog</a>
+        <a href="careers.html" class="mobile-dropdown-link">Careers</a>
+      </div>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+    </nav>
+    <a href="pickup-booking.html" class="btn btn-primary active" style="margin-top: auto; width: 100%;">Schedule Pickup</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section-badge">Booking Wizard</span>
+      <h1 class="section-title" style="margin: 0 auto 12px;">Schedule E-Waste Doorstep Pickup</h1>
+      <p class="section-desc" style="margin-left:auto; margin-right:auto;">Quickly specify your materials, calculate volumes, choose dates, and schedule CPCB compliant cargo logistics.</p>
+    </div>
+  </section>
+
+  <!-- Stepper and Forms -->
+  <section class="reveal">
+    <div class="container">
+      <div class="wizard-container">
+        
+        <!-- Stepper Indicators -->
+        <div class="stepper">
+          <div class="stepper-item active">
+            <div class="stepper-icon">1</div>
+            <div class="stepper-label">Materials</div>
+          </div>
+          <div class="stepper-item">
+            <div class="stepper-icon">2</div>
+            <div class="stepper-label">Quantity</div>
+          </div>
+          <div class="stepper-item">
+            <div class="stepper-icon">3</div>
+            <div class="stepper-label">Address</div>
+          </div>
+          <div class="stepper-item">
+            <div class="stepper-icon">4</div>
+            <div class="stepper-label">Contact</div>
+          </div>
+          <div class="stepper-item">
+            <div class="stepper-icon">5</div>
+            <div class="stepper-label">Review</div>
+          </div>
+        </div>
+
+        <!-- Wizard form container -->
+        <div class="card" style="padding: var(--spacing-xl);">
+          <form id="pickupBookingForm" novalidate>
+            
+            <!-- Step 1: Materials -->
+            <div class="wizard-step" style="display: block;">
+              <h3 style="color:var(--color-secondary); margin-bottom:var(--spacing-md);">Select Primary E-Waste Type</h3>
+              <div class="form-group">
+                <input type="hidden" id="selectedMaterial" required>
+                <div class="material-select-grid">
+                  <div class="material-select-card" data-value="itad">
+                    <div class="material-card-icon">🖥</div>
+                    <div>
+                      <h4 style="margin:0;">IT Assets & Servers</h4>
+                      <p class="text-muted" style="font-size:11px; margin:0;">Servers, workstations, laptops</p>
+                    </div>
+                  </div>
+                  <div class="material-select-card" data-value="e-waste">
+                    <div class="material-card-icon">🔌</div>
+                    <div>
+                      <h4 style="margin:0;">Office Appliances</h4>
+                      <p class="text-muted" style="font-size:11px; margin:0;">Printers, copiers, cabling</p>
+                    </div>
+                  </div>
+                  <div class="material-select-card" data-value="battery">
+                    <div class="material-card-icon">🔋</div>
+                    <div>
+                      <h4 style="margin:0;">UPS Batteries</h4>
+                      <p class="text-muted" style="font-size:11px; margin:0;">Lead-acid blocks, chemical cells</p>
+                    </div>
+                  </div>
+                  <div class="material-select-card" data-value="epr">
+                    <div class="material-card-icon">🗎</div>
+                    <div>
+                      <h4 style="margin:0;">EPR Portal Credit Fulfill</h4>
+                      <p class="text-muted" style="font-size:11px; margin:0;">Calculate targets & portal logs</p>
+                    </div>
+                  </div>
+                </div>
+                <span class="form-error">Please select a material type.</span>
+              </div>
+              
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary" style="visibility: hidden;">Back</button>
+                <button type="button" class="btn btn-primary btn-next">Next Step &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Quantity Details -->
+            <div class="wizard-step" style="display: none;">
+              <h3 style="color:var(--color-secondary); margin-bottom:var(--spacing-md);">Estimated Recycling Load</h3>
+              
+              <div class="grid grid-2" style="gap: var(--spacing-md);">
+                <div class="form-group">
+                  <label class="form-label" for="quantity">Quantity Value *</label>
+                  <input type="number" id="quantity" class="form-input" required min="1" placeholder="e.g. 50">
+                  <span class="form-error">Please enter a valid quantity value.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="quantityUnit">Recycling Unit *</label>
+                  <select id="quantityUnit" class="form-input" required>
+                    <option value="Units">Individual Devices</option>
+                    <option value="Kg">Weight (Kilograms)</option>
+                    <option value="Tons">Weight (Metric Tons)</option>
+                  </select>
+                  <span class="form-error">Please select a quantity unit.</span>
+                </div>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary btn-prev">&larr; Back</button>
+                <button type="button" class="btn btn-primary btn-next">Next Step &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Address -->
+            <div class="wizard-step" style="display: none;">
+              <h3 style="color:var(--color-secondary); margin-bottom:var(--spacing-md);">Logistics Destination</h3>
+              
+              <div class="form-group">
+                <label class="form-label" for="address">Pickup Street Address *</label>
+                <input type="text" id="address" class="form-input" required placeholder="Plot number, sector, street name">
+                <span class="form-error">Street address is required.</span>
+              </div>
+
+              <div class="grid grid-2" style="gap: var(--spacing-md);">
+                <div class="form-group">
+                  <label class="form-label" for="city">City Name *</label>
+                  <input type="text" id="city" class="form-input" required placeholder="e.g. Nashik">
+                  <span class="form-error">City name is required.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pincode">Pincode *</label>
+                  <input type="text" id="pincode" class="form-input" required placeholder="6-digit PIN code">
+                  <span class="form-error">Pincode is required.</span>
+                </div>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary btn-prev">&larr; Back</button>
+                <button type="button" class="btn btn-primary btn-next">Next Step &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 4: Schedule & Contact -->
+            <div class="wizard-step" style="display: none;">
+              <h3 style="color:var(--color-secondary); margin-bottom:var(--spacing-md);">Schedule & Contact Info</h3>
+              
+              <div class="grid grid-2" style="gap: var(--spacing-md);">
+                <div class="form-group">
+                  <label class="form-label" for="contactName">Representative Name *</label>
+                  <input type="text" id="contactName" class="form-input" required placeholder="Enter full name">
+                  <span class="form-error">Name is required.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="companyName">Company Name</label>
+                  <input type="text" id="companyName" class="form-input" placeholder="Optional for private pickups">
+                </div>
+              </div>
+
+              <div class="grid grid-2" style="gap: var(--spacing-md);">
+                <div class="form-group">
+                  <label class="form-label" for="contactEmail">Email Address *</label>
+                  <input type="email" id="contactEmail" class="form-input" required placeholder="name@company.com">
+                  <span class="form-error">Valid email is required.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contactPhone">Mobile Phone *</label>
+                  <input type="tel" id="contactPhone" class="form-input" required placeholder="10-digit mobile number">
+                  <span class="form-error">Valid 10-digit number is required.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pickupDate">Preferred Pickup Date *</label>
+                <input type="date" id="pickupDate" class="form-input" required>
+                <span class="form-error">Preferred date is required.</span>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary btn-prev">&larr; Back</button>
+                <button type="button" class="btn btn-primary btn-next">Next Step &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 5: Review & Submit -->
+            <div class="wizard-step" style="display: none;">
+              <h3 style="color:var(--color-secondary); margin-bottom:var(--spacing-md);">Confirm Details</h3>
+              <p class="text-muted" style="margin-bottom:var(--spacing-md);">Please review your information before submitting to our logistics team.</p>
+              
+              <table class="review-table">
+                <tr>
+                  <td>E-Waste Category</td>
+                  <td id="summaryMaterial">Not Selected</td>
+                </tr>
+                <tr>
+                  <td>Estimated Volume</td>
+                  <td id="summaryQuantity">0 Kg</td>
+                </tr>
+                <tr>
+                  <td>Logistics Address</td>
+                  <td id="summaryLocation">Not Supplied</td>
+                </tr>
+                <tr>
+                  <td>Pickup Date</td>
+                  <td id="summaryDate">Not Selected</td>
+                </tr>
+                <tr>
+                  <td>Contact Details</td>
+                  <td id="summaryContact">Not Selected</td>
+                </tr>
+              </table>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary btn-prev">&larr; Back</button>
+                <button type="button" class="btn btn-primary btn-next" style="background-color: var(--color-primary); border-color: var(--color-primary);">Confirm & Book Pickup</button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Booking Success Panel -->
+          <div id="bookingSuccessPanel" style="display: none; text-align: center; padding: var(--spacing-xl) 0;">
+            <div style="font-size: 56px; color: var(--color-primary); margin-bottom: var(--spacing-sm);">✓</div>
+            <h2 style="color: var(--color-secondary); margin-bottom: 4px;">Pickup Scheduled successfully</h2>
+            <p class="text-muted" style="font-size: var(--font-size-md); margin-bottom: var(--spacing-lg);">Your request has been logged inside our logistics channel. An audit team will verify your cargo within 24 hours.</p>
+            
+            <div style="background-color: var(--color-bg-canvas); padding: var(--spacing-md); border-radius: var(--radius-sm); display: inline-block; border: 1px solid var(--color-border); margin-bottom: var(--spacing-xl);">
+              <span class="text-muted" style="font-size:12px; text-transform:uppercase; font-weight:600; letter-spacing:0.05em;">Your Reference ID</span>
+              <div id="bookingRefNumber" style="font-size:24px; font-weight:900; color:var(--color-primary); font-family:monospace; margin-top:2px;">BHR-000000</div>
+            </div>
+
+            <div>
+              <a href="index.html" class="btn btn-secondary" style="border-color: var(--color-primary); color: var(--color-primary);">Return to Homepage</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom: var(--spacing-md);">
+            <img src="img/logo.png" alt="Bhushan E-Waste Recycling Logo" class="footer-logo-img">
+          </a>
+          <p>Government-authorized and CPCB certified e-waste recycler delivering secure ITAD, battery recycling, data destruction, and EPR support in Nashik, Maharashtra.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services/it-asset-disposition.html" class="footer-link">IT Asset Disposition</a></li>
+            <li><a href="services/e-waste-recycling.html" class="footer-link">E-Waste Recycling</a></li>
+            <li><a href="services/battery-recycling.html" class="footer-link">Battery Recycling</a></li>
+            <li><a href="services/epr-compliance.html" class="footer-link">EPR Compliance</a></li>
+            <li><a href="services/dismantling.html" class="footer-link">Dismantling & Sorting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Our Company</a></li>
+            <li><a href="infrastructure.html" class="footer-link">Our Infrastructure</a></li>
+            <li><a href="recycling-process.html" class="footer-link">Recycling Flow</a></li>
+            <li><a href="data-security.html" class="footer-link">Data Security</a></li>
+            <li><a href="careers.html" class="footer-link">Careers</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Newsletter</h4>
+          <div class="footer-newsletter">
+            <p>Subscribe to receive CPCB guidelines and eco notification alerts directly in your inbox.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email Address">
+              <button type="submit" class="newsletter-submit">Go</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="copyright">&copy; 2026 Bhushan E-Waste Recycling Pvt. Ltd. All rights reserved.</span>
+        <div class="certifications-row">
+          <span class="cert-badge">CPCB Certified Recycler</span>
+          <span class="cert-badge">MPCB Authorized</span>
+          <span class="cert-badge">ISO 14001 Compliant</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919999999999?text=Hello%20Bhushan%20E-Waste%2C%20I%20want%20to%20schedule%20an%20e-waste%20pickup." class="sticky-whatsapp-btn" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/pickup-booking.js"></script>
+</body>
+</html>

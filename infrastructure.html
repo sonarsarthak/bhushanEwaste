@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Recycling Infrastructure | Bhushan E-Waste Recycling</title>
+  <meta name="description" content="Tour our semi-automated e-waste recycling facility in Nashik, Maharashtra. Explore our advanced machinery, GPS-tracked fleet, and annual processing capacity.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <style>
+    .page-hero {
+      padding-top: 140px;
+      padding-bottom: 60px;
+      background: linear-gradient(180deg, var(--color-primary-light) 0%, rgba(250,250,249,1) 100%);
+      text-align: center;
+    }
+    
+    .infra-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+    
+    @media (min-width: 768px) {
+      .infra-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .infra-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      transition: all var(--transition-normal);
+    }
+    
+    .infra-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .machine-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+
+    .machine-item {
+      display: flex;
+      gap: var(--spacing-md);
+      padding: var(--spacing-md);
+      background-color: var(--color-bg-canvas);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+    }
+
+    .machine-icon {
+      font-size: 24px;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .machine-title {
+      font-weight: var(--font-weight-bold);
+      color: var(--color-secondary);
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Bhushan E-Waste Recycling Logo">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About Us</a></div>
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">
+            Services
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="services/it-asset-disposition.html" class="dropdown-link">IT Asset Disposition (ITAD)</a>
+            <a href="services/e-waste-recycling.html" class="dropdown-link">E-Waste Recycling</a>
+            <a href="services/battery-recycling.html" class="dropdown-link">Battery Recycling</a>
+            <a href="services/epr-compliance.html" class="dropdown-link">EPR Compliance Authorization</a>
+            <a href="services/dismantling.html" class="dropdown-link">Dismantling & Segregation</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="infrastructure.html" class="nav-link active">Our Infra</a></div>
+        <div class="nav-item"><a href="recycling-process.html" class="nav-link">Recycling Process</a></div>
+        <div class="nav-item">
+          <a href="resources.html" class="nav-link">
+            Resources
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="data-security.html" class="dropdown-link">Data Security</a>
+            <a href="epr-compliance.html" class="dropdown-link">Government Guidelines</a>
+            <a href="resources.html" class="dropdown-link">Knowledge Center & Blog</a>
+            <a href="careers.html" class="dropdown-link">Careers</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="pickup-booking.html" class="btn btn-primary" style="padding: 10px 20px;">Schedule Pickup</a>
+        <button class="hamburger-btn" aria-label="Toggle Mobile Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer">
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <span class="mobile-nav-link" style="margin-bottom: -10px;">Services</span>
+      <div class="mobile-nav-sublist">
+        <a href="services/it-asset-disposition.html" class="mobile-dropdown-link">IT Asset Disposition</a>
+        <a href="services/e-waste-recycling.html" class="mobile-dropdown-link">E-Waste Recycling</a>
+        <a href="services/battery-recycling.html" class="mobile-dropdown-link">Battery Recycling</a>
+        <a href="services/epr-compliance.html" class="mobile-dropdown-link">EPR Compliance</a>
+        <a href="services/dismantling.html" class="mobile-dropdown-link">Dismantling Unit</a>
+      </div>
+      <a href="infrastructure.html" class="mobile-nav-link active">Our Infrastructure</a>
+      <a href="recycling-process.html" class="mobile-nav-link">Recycling Process</a>
+      <span class="mobile-nav-link" style="margin-bottom: -10px;">Security & Rules</span>
+      <div class="mobile-nav-sublist">
+        <a href="data-security.html" class="mobile-dropdown-link">Data Security</a>
+        <a href="epr-compliance.html" class="mobile-dropdown-link">EPR Guidelines</a>
+        <a href="resources.html" class="mobile-dropdown-link">Resources & Blog</a>
+        <a href="careers.html" class="mobile-dropdown-link">Careers</a>
+      </div>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+    </nav>
+    <a href="pickup-booking.html" class="btn btn-primary" style="margin-top: auto; width: 100%;">Schedule Pickup</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section-badge">Our Plant & Logistics</span>
+      <h1 class="section-title" style="margin: 0 auto 12px;">High-Capacity Recycling Plant</h1>
+      <p class="section-desc" style="margin-left:auto; margin-right:auto;">Explore our Nashik processing facility, computerized logistics fleet, and industrial machines handling massive waste loads.</p>
+    </div>
+  </section>
+
+  <!-- Facility Details -->
+  <section style="background-color: #ffffff;" class="reveal">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div>
+          <h2>Facility Specifications</h2>
+          <p>Bhushan E-Waste Recycling operates a high-grade facility in Nashik, designed in compliance with state-level MPCB industrial standards. The plant coordinates multi-level manual sorting tables, heavy mechanical grinders, and secure data destruction units.</p>
+          <div class="grid grid-2" style="margin-top:var(--spacing-md); gap:var(--spacing-md);">
+            <div class="stat-card" style="padding:var(--spacing-md); text-align:left;">
+              <div class="stat-number" data-target="15000">0</div>
+              <div class="stat-label">Square Feet Plant Area</div>
+            </div>
+            <div class="stat-card" style="padding:var(--spacing-md); text-align:left;">
+              <div class="stat-number" data-target="12000">0</div>
+              <div class="stat-label">Tons Annual Capacity</div>
+            </div>
+          </div>
+        </div>
+        <div style="background-color: var(--color-bg-canvas); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-xl); text-align:center;">
+          <!-- SVG layout of the plant sections -->
+          <svg width="200" height="150" viewBox="0 0 200 150" style="margin-bottom:var(--spacing-md);">
+            <rect x="10" y="10" width="180" height="130" rx="10" fill="none" stroke="var(--color-primary)" stroke-width="4"/>
+            <rect x="25" y="25" width="60" height="40" rx="4" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
+            <text x="32" y="48" fill="var(--color-secondary)" font-size="10" font-weight="700">Sorting Line</text>
+            <rect x="115" y="25" width="60" height="40" rx="4" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
+            <text x="124" y="48" fill="var(--color-secondary)" font-size="10" font-weight="700">Shredder</text>
+            <rect x="25" y="85" width="60" height="40" rx="4" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
+            <text x="36" y="108" fill="var(--color-secondary)" font-size="10" font-weight="700">Data Lab</text>
+            <rect x="115" y="85" width="60" height="40" rx="4" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
+            <text x="122" y="108" fill="var(--color-secondary)" font-size="10" font-weight="700">Refining</text>
+          </svg>
+          <h3 style="color:var(--color-secondary); margin-bottom:4px;">Nashik Facility Layout</h3>
+          <p class="text-muted" style="font-size:13px; line-height:1.4;">Zoned operational areas isolate chemical processes from clean storage structures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Machinery Showcase -->
+  <section class="reveal">
+    <div class="container">
+      <div class="section-header center">
+        <h2>Advanced Processing Machinery</h2>
+        <p class="section-desc">Our plant is configured with mechanical setups to recover raw metals cleanly.</p>
+      </div>
+
+      <div class="infra-grid">
+        <!-- Machine 1 -->
+        <div class="infra-card">
+          <h3 style="color:var(--color-secondary); margin-bottom: var(--spacing-sm);">Secure Shredding Units</h3>
+          <p>We deploy high-torque, slow-speed mechanical double-shaft shredders. These setups slice computer towers, monitors, and casing boards into uniform pieces to isolate base metals from plastic layers.</p>
+          <div class="machine-list">
+            <div class="machine-item">
+              <div class="machine-icon">&#9881;</div>
+              <div>
+                <div class="machine-title">High-Torque Dual Shaft Grinder</div>
+                <p class="text-muted" style="font-size:13px;">Processes up to 1.5 tons of plastic and steel casing scrap per hour.</p>
+              </div>
+            </div>
+            <div class="machine-item">
+              <div class="machine-icon">&#9881;</div>
+              <div>
+                <div class="machine-title">Magnetic Separator Belts</div>
+                <p class="text-muted" style="font-size:13px;">Extracts iron and steel automatically from the output stream.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Machine 2 -->
+        <div class="infra-card">
+          <h3 style="color:var(--color-secondary); margin-bottom: var(--spacing-sm);">Sanitization & Refining</h3>
+          <p>Our clean rooms host multi-pass magnetic degaussers and chemical copper recovery baths, supporting secure ITAD and industrial battery processing protocols.</p>
+          <div class="machine-list">
+            <div class="machine-item">
+              <div class="machine-icon">&#9881;</div>
+              <div>
+                <div class="machine-title">HD-5 Degausser Unit</div>
+                <p class="text-muted" style="font-size:13px;">Wipes magnetic hard disk platters cleanly via 20,000-gauss pulses.</p>
+              </div>
+            </div>
+            <div class="machine-item">
+              <div class="machine-icon">&#9881;</div>
+              <div>
+                <div class="machine-title">Lithium Neutralization Cells</div>
+                <p class="text-muted" style="font-size:13px;">Neutralizes trace organic solvents from disassembled battery nodes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logistics & Fleet -->
+  <section style="background-color: #ffffff;" class="reveal">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div style="background-color: var(--color-bg-canvas); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-xl); text-align:center;">
+          <!-- SVG logistics vehicle -->
+          <svg width="180" height="120" viewBox="0 0 100 60" style="margin-bottom:var(--spacing-md);">
+            <path d="M10 15 H70 V45 H10 Z" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
+            <path d="M70 25 H85 L90 35 V45 H70 Z" fill="none" stroke="var(--color-primary)" stroke-width="2"/>
+            <circle cx="25" cy="48" r="6" fill="var(--color-secondary)"/>
+            <circle cx="75" cy="48" r="6" fill="var(--color-secondary)"/>
+            <text x="25" y="33" fill="var(--color-primary)" font-size="6" font-weight="900">BHUSHAN FLEET</text>
+          </svg>
+          <h3 style="color:var(--color-secondary); margin-bottom:4px;">GPS-Tracked Logistics</h3>
+          <p class="text-muted" style="font-size:13px; line-height:1.4;">Each logistics container is monitored in real-time by our central compliance office.</p>
+        </div>
+        <div>
+          <h2>Secure Logistics Fleet</h2>
+          <p>We manage our own logistics operations to prevent device leakage during transit. This closed-loop transportation pipeline features:</p>
+          <ul style="display:flex; flex-direction:column; gap: var(--spacing-sm); margin-top:var(--spacing-md);">
+            <li style="display:flex; gap:8px;"><span class="text-primary">&#10003;</span> <strong>Locked Steel Containers:</strong> Cargo spaces remain sealed from loading point to unloading bay.</li>
+            <li style="display:flex; gap:8px;"><span class="text-primary">&#10003;</span> <strong>Real-Time GPS Tracking:</strong> Enterprise clients can access vehicle location updates.</li>
+            <li style="display:flex; gap:8px;"><span class="text-primary">&#10003;</span> <strong>Trained Security Personnel:</strong> Logistics crews are certified in safe transport and data custody.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="reveal">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Schedule Corporate Facility Audit</h2>
+        <p>Want to verify our mechanical processing limits and safety controls? Request a site visit for your environmental audit team.</p>
+        <a href="contact.html" class="btn btn-secondary" style="background-color: var(--color-accent); color: var(--color-secondary-dark);">Book Plant Tour</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom: var(--spacing-md);">
+            <img src="img/logo.png" alt="Bhushan E-Waste Recycling Logo" class="footer-logo-img">
+          </a>
+          <p>Government-authorized and CPCB certified e-waste recycler delivering secure ITAD, battery recycling, data destruction, and EPR support in Nashik, Maharashtra.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services/it-asset-disposition.html" class="footer-link">IT Asset Disposition</a></li>
+            <li><a href="services/e-waste-recycling.html" class="footer-link">E-Waste Recycling</a></li>
+            <li><a href="services/battery-recycling.html" class="footer-link">Battery Recycling</a></li>
+            <li><a href="services/epr-compliance.html" class="footer-link">EPR Compliance</a></li>
+            <li><a href="services/dismantling.html" class="footer-link">Dismantling & Sorting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Our Company</a></li>
+            <li><a href="infrastructure.html" class="footer-link">Our Infrastructure</a></li>
+            <li><a href="recycling-process.html" class="footer-link">Recycling Flow</a></li>
+            <li><a href="data-security.html" class="footer-link">Data Security</a></li>
+            <li><a href="careers.html" class="footer-link">Careers</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Newsletter</h4>
+          <div class="footer-newsletter">
+            <p>Subscribe to receive CPCB guidelines and eco notification alerts directly in your inbox.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email Address">
+              <button type="submit" class="newsletter-submit">Go</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="copyright">&copy; 2026 Bhushan E-Waste Recycling Pvt. Ltd. All rights reserved.</span>
+        <div class="certifications-row">
+          <span class="cert-badge">CPCB Certified Recycler</span>
+          <span class="cert-badge">MPCB Authorized</span>
+          <span class="cert-badge">ISO 14001 Compliant</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919999999999?text=Hello%20Bhushan%20E-Waste%2C%20I%20want%20to%20schedule%20an%20e-waste%20pickup." class="sticky-whatsapp-btn" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/counters.js"></script>
+</body>
+</html>

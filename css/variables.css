@@ -1,0 +1,79 @@
+/* 
+   Bhushan E-Waste Recycling Pvt. Ltd.
+   Design System variables.css
+*/
+
+:root {
+  /* Colors */
+  --color-primary: #15803d;       /* Deep eco green */
+  --color-primary-dark: #166534;  /* Dark forest green for hover/active states */
+  --color-primary-light: #dcfce7; /* Light green for badges and icon backgrounds */
+  --color-secondary: #0b1f3a;     /* Deep navy for headers and brand sections */
+  --color-secondary-dark: #071527;/* Rich dark navy */
+  --color-accent: #7ed957;        /* Soft vibrant eco-lime accent */
+  --color-accent-light: #f0fdf4;  /* Accent tinted white */
+  
+  /* Neutrals */
+  --color-bg-canvas: #fafaf9;     /* Warm neutral off-white background */
+  --color-bg-card: #ffffff;       /* Pure white for containers/cards */
+  --color-bg-neutral-light: #f3f4f6; /* Light gray for dividers and inputs */
+  --color-text-dark: #0f172a;     /* Slate-900: high-contrast dark text for headings */
+  --color-text-body: #475569;     /* Slate-600: readable body text */
+  --color-text-muted: #64748b;    /* Slate-500: secondary/meta text */
+  --color-border: rgba(0, 0, 0, 0.08); /* Minimal subtle border lines */
+  --color-border-focus: #15803d;
+  
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-md: 1.125rem;  /* 18px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-2xl: 1.875rem; /* 30px */
+  --font-size-3xl: 2.25rem;  /* 36px */
+  --font-size-4xl: 3rem;     /* 48px */
+  --font-size-5xl: 3.75rem;  /* 60px */
+  --font-size-6xl: 4.5rem;   /* 72px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-body: 1.7;
+  --line-height-heading: 1.2;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 20px 25px -5px rgba(15, 92, 61, 0.08), 0 8px 10px -6px rgba(15, 92, 61, 0.04);
+  
+  /* Borders & Spacing */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 100px;
+  
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 0.75rem;  /* 12px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;     /* 32px */
+  --spacing-2xl: 3rem;    /* 48px */
+  --spacing-3xl: 4rem;    /* 64px */
+  --spacing-4xl: 6rem;    /* 96px */
+  --spacing-5xl: 8rem;    /* 128px */
+
+  --max-width: 1280px;
+
+  /* Animations */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

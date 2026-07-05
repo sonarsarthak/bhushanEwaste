@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Bhushan E-Waste Recycling Pvt. Ltd.</title>
+  <meta name="description" content="Learn about Nashik's leading CPCB certified e-waste recycling provider. Explore our story, mission, core values, journey timeline, and our commitment to eco-friendly electronics recycling.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <style>
+    .page-hero {
+      padding-top: 140px;
+      padding-bottom: 60px;
+      background: linear-gradient(180deg, var(--color-primary-light) 0%, rgba(250,250,249,1) 100%);
+      text-align: center;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-xl);
+    }
+    
+    @media (min-width: 768px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .team-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      text-align: center;
+      transition: all var(--transition-normal);
+    }
+    
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-primary);
+    }
+    
+    .team-photo-placeholder {
+      width: 100%;
+      height: 240px;
+      background-color: var(--color-bg-neutral-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+    }
+    
+    .team-info {
+      padding: var(--spacing-md);
+    }
+    
+    .team-name {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-secondary);
+      margin-bottom: 2px;
+    }
+    
+    .team-role {
+      font-size: var(--font-size-xs);
+      color: var(--color-primary);
+      text-transform: uppercase;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.05em;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
+    }
+
+    @media (min-width: 768px) {
+      .cert-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .cert-item-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
+      transition: all var(--transition-fast);
+    }
+
+    .cert-item-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cert-icon {
+      font-size: 28px;
+      color: var(--color-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .cert-title {
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-secondary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Bhushan E-Waste Recycling Logo">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link active">About Us</a></div>
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">
+            Services
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="services/it-asset-disposition.html" class="dropdown-link">IT Asset Disposition (ITAD)</a>
+            <a href="services/e-waste-recycling.html" class="dropdown-link">E-Waste Recycling</a>
+            <a href="services/battery-recycling.html" class="dropdown-link">Battery Recycling</a>
+            <a href="services/epr-compliance.html" class="dropdown-link">EPR Compliance Authorization</a>
+            <a href="services/dismantling.html" class="dropdown-link">Dismantling & Segregation</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="infrastructure.html" class="nav-link">Our Infra</a></div>
+        <div class="nav-item"><a href="recycling-process.html" class="nav-link">Recycling Process</a></div>
+        <div class="nav-item">
+          <a href="resources.html" class="nav-link">
+            Resources
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="data-security.html" class="dropdown-link">Data Security</a>
+            <a href="epr-compliance.html" class="dropdown-link">Government Guidelines</a>
+            <a href="resources.html" class="dropdown-link">Knowledge Center & Blog</a>
+            <a href="careers.html" class="dropdown-link">Careers</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="pickup-booking.html" class="btn btn-primary" style="padding: 10px 20px;">Schedule Pickup</a>
+        <button class="hamburger-btn" aria-label="Toggle Mobile Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer">
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link active">About Us</a>
+      <span class="mobile-nav-link" style="margin-bottom: -10px;">Services</span>
+      <div class="mobile-nav-sublist">
+        <a href="services/it-asset-disposition.html" class="mobile-dropdown-link">IT Asset Disposition</a>
+        <a href="services/e-waste-recycling.html" class="mobile-dropdown-link">E-Waste Recycling</a>
+        <a href="services/battery-recycling.html" class="mobile-dropdown-link">Battery Recycling</a>
+        <a href="services/epr-compliance.html" class="mobile-dropdown-link">EPR Compliance</a>
+        <a href="services/dismantling.html" class="mobile-dropdown-link">Dismantling Unit</a>
+      </div>
+      <a href="infrastructure.html" class="mobile-nav-link">Our Infrastructure</a>
+      <a href="recycling-process.html" class="mobile-nav-link">Recycling Process</a>
+      <span class="mobile-nav-link" style="margin-bottom: -10px;">Security & Rules</span>
+      <div class="mobile-nav-sublist">
+        <a href="data-security.html" class="mobile-dropdown-link">Data Security</a>
+        <a href="epr-compliance.html" class="mobile-dropdown-link">EPR Guidelines</a>
+        <a href="resources.html" class="mobile-dropdown-link">Resources & Blog</a>
+        <a href="careers.html" class="mobile-dropdown-link">Careers</a>
+      </div>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+    </nav>
+    <a href="pickup-booking.html" class="btn btn-primary" style="margin-top: auto; width: 100%;">Schedule Pickup</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section-badge">Company Profile</span>
+      <h1 class="section-title" style="margin: 0 auto 12px;">Pioneering Eco-Friendly Recycling Solutions</h1>
+      <p class="section-desc" style="margin-left:auto; margin-right:auto;">Discover our story, mission, core values, and credentials as Nashik's premier government-authorized electronics recycling firm.</p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section style="background-color:#ffffff;" class="reveal">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div>
+          <h2 style="color:var(--color-secondary);">Our Story</h2>
+          <p>Founded in Nashik, Maharashtra, **Bhushan E-Waste Recycling Pvt. Ltd.** was established with a singular vision: to address the growing environmental threat posed by obsolete electronics. Over the years, we have grown from a local collector to a state-authorized recycling plant serving corporations, banks, healthcare providers, and local government departments nationwide.</p>
+          <p>We believe that standard business practices must align with environmental preservation. Through advanced technology, certified segregation, and data-destruction pipelines, we guarantee that no collected devices end up in public landfills.</p>
+        </div>
+        <div style="background-color: var(--color-bg-canvas); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-xl); text-align: center;">
+          <!-- IMAGE: Illustration of recycling loop and sustainable earth -->
+          <svg width="120" height="120" viewBox="0 0 100 100" style="margin-bottom:var(--spacing-md);">
+            <path d="M30 60 A20 20 0 1 1 70 60 L80 60 A30 30 0 1 0 20 60 Z" fill="var(--color-primary)"/>
+            <circle cx="50" cy="50" r="15" fill="var(--color-secondary)"/>
+          </svg>
+          <h3 style="color:var(--color-secondary); margin-bottom:8px;">Nashik's Pride</h3>
+          <p class="text-muted" style="font-size:14px; line-height:1.4;">Operated locally under strict regulatory frameworks to deliver pan-India environmental sustainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="reveal">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="trust-card-icon" style="margin-bottom: var(--spacing-md);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          </div>
+          <h3>Our Mission</h3>
+          <p class="text-muted">To deliver transparent, secure, and environment-friendly disposal services that help corporations offset their carbon footprints and legally dismantle obsolete IT assets with 100% trace credentials.</p>
+        </div>
+        <div class="card">
+          <div class="trust-card-icon" style="margin-bottom: var(--spacing-md);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </div>
+          <h3>Our Vision</h3>
+          <p class="text-muted">To build a complete circular economy framework in India, where electronic waste materials are constantly harvested, recycled, and returned to production loops to achieve zero landfill targets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section style="background-color: #ffffff;" class="reveal">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title">Our Core Values</h2>
+        <p class="section-desc">The principles driving our operations, client interactions, and regulatory adherence daily.</p>
+      </div>
+      <div class="grid grid-3">
+        <!-- Value 1 -->
+        <div class="card" style="border: 0; box-shadow: none; text-align: center; padding: 0;">
+          <div class="trust-card-icon" style="margin: 0 auto var(--spacing-md); width:56px; height:56px; border-radius:50%;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h4>Integrity & Trust</h4>
+          <p class="text-muted" style="font-size:14px; line-height: 1.5;">Operating with full transparency by providing verifiable audit trails, certifications, and direct facility visits.</p>
+        </div>
+        <!-- Value 2 -->
+        <div class="card" style="border: 0; box-shadow: none; text-align: center; padding: 0;">
+          <div class="trust-card-icon" style="margin: 0 auto var(--spacing-md); width:56px; height:56px; border-radius:50%;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <h4>Circular Economy</h4>
+          <p class="text-muted" style="font-size:14px; line-height: 1.5;">Recovering secondary materials like copper, iron, aluminum, and plastics to feed manufacturing loops sustainably.</p>
+        </div>
+        <!-- Value 3 -->
+        <div class="card" style="border: 0; box-shadow: none; text-align: center; padding: 0;">
+          <div class="trust-card-icon" style="margin: 0 auto var(--spacing-md); width:56px; height:56px; border-radius:50%;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h4>Strict Compliance</h4>
+          <p class="text-muted" style="font-size:14px; line-height: 1.5;">Strictly complying with all state and central pollution regulations, maintaining flawless compliance records.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Timeline -->
+  <section class="reveal">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title">Our Recycling Journey</h2>
+        <p class="section-desc">Tracing our development and operational highlights over the years.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4 style="color:var(--color-primary);">2018 — The Foundation</h4>
+            <p class="text-muted" style="font-size:14px;">Inception of Bhushan E-Waste Recycling in Nashik with a basic collection storage warehouse and 4 local collection routes.</p>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4 style="color:var(--color-primary);">2020 — Government Authorization</h4>
+            <p class="text-muted" style="font-size:14px;">Acquired central pollution license and MPCB state authorization certificates. Commenced commercial collection routes across Nashik, Pune, and Mumbai.</p>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4 style="color:var(--color-primary);">2022 — ITAD Expansion</h4>
+            <p class="text-muted" style="font-size:14px;">Expanded services to incorporate secure corporate IT Asset Disposition (ITAD) and built our high-grade hard drive shredding and degaussing unit.</p>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4 style="color:var(--color-primary);">2025 — Automated Sorting Facility</h4>
+            <p class="text-muted" style="font-size:14px;">Inaugurated our new semi-automated electronic sorting and eco-recovery plant, boosting recycling limits to 12,000+ tons per annum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section style="background-color: #ffffff;" class="reveal">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title">Our Leadership Team</h2>
+        <p class="section-desc">Meet the engineers, environmentalists, and operations directors guiding our green mission.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Leader 1 -->
+        <div class="team-card">
+          <div class="team-photo-placeholder">
+            <!-- IMAGE: Portrait of Managing Director -->
+            [ Portrait Placeholder ]
+          </div>
+          <div class="team-info">
+            <div class="team-name">Bhushan Patil</div>
+            <div class="team-role">Founder & Managing Director</div>
+          </div>
+        </div>
+        
+        <!-- Leader 2 -->
+        <div class="team-card">
+          <div class="team-photo-placeholder">
+            <!-- IMAGE: Portrait of Chief Operations Officer -->
+            [ Portrait Placeholder ]
+          </div>
+          <div class="team-info">
+            <div class="team-name">Dr. Rajesh Deshmukh</div>
+            <div class="team-role">Head of Environmental Science</div>
+          </div>
+        </div>
+
+        <!-- Leader 3 -->
+        <div class="team-card">
+          <div class="team-photo-placeholder">
+            <!-- IMAGE: Portrait of Chief Logistics Officer -->
+            [ Portrait Placeholder ]
+          </div>
+          <div class="team-info">
+            <div class="team-name">Amit Sharma</div>
+            <div class="team-role">Director of Logistics & Safety</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Grid -->
+  <section class="reveal">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-badge">Compliance Badge</span>
+        <h2 class="section-title">Our Legal Certifications</h2>
+        <p class="section-desc">We operate under licensing guidelines to ensure our operations meet national environmental protection standards.</p>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-item-card">
+          <div class="cert-icon">✓</div>
+          <div class="cert-title">CPCB License</div>
+          <p class="text-muted" style="font-size:11px; margin-top:4px;">Central Pollution Control Board authorized recycler</p>
+        </div>
+        <div class="cert-item-card">
+          <div class="cert-icon">✓</div>
+          <div class="cert-title">MPCB Consent</div>
+          <p class="text-muted" style="font-size:11px; margin-top:4px;">Maharashtra Pollution Control Board authorized</p>
+        </div>
+        <div class="cert-item-card">
+          <div class="cert-icon">✓</div>
+          <div class="cert-title">ISO 14001:2015</div>
+          <p class="text-muted" style="font-size:11px; margin-top:4px;">Environmental Management System Standards Certified</p>
+        </div>
+        <div class="cert-item-card">
+          <div class="cert-icon">✓</div>
+          <div class="cert-title">ISO 9001:2015</div>
+          <p class="text-muted" style="font-size:11px; margin-top:4px;">Quality Management Systems Standardized</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="reveal">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Help Us Secure a Greener Nashik</h2>
+        <p>Book a corporate e-waste consultation today and receive legal recycling guidance.</p>
+        <a href="contact.html" class="btn btn-secondary" style="background-color: var(--color-accent); color: var(--color-secondary-dark);">Talk to an Expert</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom: var(--spacing-md);">
+            <img src="img/logo.png" alt="Bhushan E-Waste Recycling Logo" class="footer-logo-img">
+          </a>
+          <p>Government-authorized and CPCB certified e-waste recycler delivering secure ITAD, battery recycling, data destruction, and EPR support in Nashik, Maharashtra.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services/it-asset-disposition.html" class="footer-link">IT Asset Disposition</a></li>
+            <li><a href="services/e-waste-recycling.html" class="footer-link">E-Waste Recycling</a></li>
+            <li><a href="services/battery-recycling.html" class="footer-link">Battery Recycling</a></li>
+            <li><a href="services/epr-compliance.html" class="footer-link">EPR Compliance</a></li>
+            <li><a href="services/dismantling.html" class="footer-link">Dismantling & Sorting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Our Company</a></li>
+            <li><a href="infrastructure.html" class="footer-link">Our Infrastructure</a></li>
+            <li><a href="recycling-process.html" class="footer-link">Recycling Flow</a></li>
+            <li><a href="data-security.html" class="footer-link">Data Security</a></li>
+            <li><a href="careers.html" class="footer-link">Careers</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Newsletter</h4>
+          <div class="footer-newsletter">
+            <p>Subscribe to receive CPCB guidelines and eco notification alerts directly in your inbox.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email Address">
+              <button type="submit" class="newsletter-submit">Go</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="copyright">&copy; 2026 Bhushan E-Waste Recycling Pvt. Ltd. All rights reserved.</span>
+        <div class="certifications-row">
+          <span class="cert-badge">CPCB Certified Recycler</span>
+          <span class="cert-badge">MPCB Authorized</span>
+          <span class="cert-badge">ISO 14001 Compliant</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919999999999?text=Hello%20Bhushan%20E-Waste%2C%20I%20want%20to%20schedule%20an%20e-waste%20pickup." class="sticky-whatsapp-btn" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/form-validation.js"></script>
+</body>
+</html>
